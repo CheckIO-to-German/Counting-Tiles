@@ -1,0 +1,50 @@
+<p>
+  Stephan necesita un poco de ayuda con la construcci&oacute;n de una zona de
+  aterrizaje circular para su nueva Base de Hielo. Para esta labor, Stephan
+  dispone de bloques cuadrados de hielo pero es necesario que conozca de
+  antemano cuantos cuadrados necesita, antes que pueda convertir la zona en
+  un lugar de construcci&oacute;n.
+</p>
+
+<p>
+  Cada bloque cuadrado de hielo es de 1x1 metros. Deber&aacute;s calcular
+  cu&aacute;ntos bloques enteros y cuantos bloques fragmentados se
+  necesitan para construir un c&iacute;rculo con un radio de N metros. El centro
+  del c&iacute;rculo estar&aacute; en la intersecci&oacute;n de bloques. Por ejemplo: un
+  c&iacute;rculo con un radio de 2 metros requiere 4 bloques enteros y 12
+  bloques fragmentados.
+<p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" width="500px"/>
+    <img class="for_editor_only" src="{{ MEDIA }}counting-tiles.png" width="380px"/>
+</p>
+
+<p><strong>Datos de Entrada:</strong> El radio de un c&iacute;rculo como un
+  decimal (<em>float</em>)</p>
+
+<p><strong>Salida:</strong> El n&uacute;mero de bloques enteros y bloques fragmentados,
+  como una lista con dos enteros - [entero, fragmentado].</p>
+
+<div class="for_info_only"><strong>Ejemplo:</strong>
+<pre class="brush:python">
+checkio(2) == [4, 12]
+checkio(3) == [16, 20]
+checkio(2.1) == [4, 20]
+checkio(2.5) == [12, 20]
+</pre>
+</div>
+
+
+<p class="for_info_only">
+  <strong>&iquest;C&oacute;mo se usa?:</strong>
+  Esta tarea es un problema de geometr&iacute;a simple; pero se puedes utilizarla
+  en arquitectura y topograf&iacute;a. Como vimos en la descripci&oacute;n, podr&iacute;as calcular
+  la cantidad de materiales necesarios para un proyecto.
+</p>
+
+
+<p>
+    <strong>Condiciones:</strong><br>
+    0 &lt; radius &le; 4<br>
+</p>
