@@ -9,8 +9,7 @@
     requires 4 whole tiles and 12 partial tiles.
 <p>
 <p style="text-align: center;">
-    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" width="500px"/>
-    <img class="for_editor_only" src="{{ MEDIA }}counting-tiles.png" width="380px"/>
+    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" style="max-height: 500px" />
 </p>
 
 <p><strong>Input:</strong> The radius of a circle as a float</p>
@@ -18,12 +17,17 @@
 <p><strong>Output:</strong> The quantities whole and partial tiles as a list with two integers -- [solid, partial].</p>
 
 <div class="for_info_only"><strong>Example:</strong>
-<pre class="brush:python">
+<pre class="brush:python">{% if interpreter.slug == "js-node" %}
+countingTiles(2) == [4, 12]
+countingTiles(3) == [16, 20]
+countingTiles(2.1) == [4, 20]
+countingTiles(2.5) == [12, 20]
+{% else %}
 checkio(2) == [4, 12]
 checkio(3) == [16, 20]
 checkio(2.1) == [4, 20]
 checkio(2.5) == [12, 20]
-</pre>
+{% endif %}</pre>
 </div>
 
 

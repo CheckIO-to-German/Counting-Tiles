@@ -117,6 +117,14 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
         });
 
+        
+
+
+    }
+);
+
+requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
+    function (extIO, $, TableComponent) {
         function CountingTilesCanvas(dom, dataInput, cellN){
             //Vars
             var cellSize = 40;
@@ -176,6 +184,47 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
         }
 
+        var $tryit;
+        var tooltip = false;
 
+        var io = new extIO({
+            animation: function($expl, data){
+                var checkioInput = data.in;
+                if (!checkioInput){
+                    return;
+                }
+                var canvas = new CountingTilesCanvas($expl[0], checkioInput, 8);
+                canvas.createCanvas();
+            },
+            retConsole: function (ret) {
+                $tryit.find(".checkio-result-in").html(ret);
+            },
+            tryit:function (this_e) {
+                $tryit = $(this_e.extSetHtmlTryIt(this_e.getTemplate('tryit')));
+                var tCanvas = new CountingTilesCanvas($tryit.find(".tryit-canvas")[0], 2, 6);
+                tCanvas.createCanvas();
+                tCanvas.createFeedback(function(r, e) {
+                    this_e.extSendToConsoleCheckiO(r);
+                    e.stopPropagation();
+                    return false;
+                });
+                $tryit.find(".tryit-canvas").mouseenter(function (e) {
+                    if (tooltip) {
+                        return false;
+                    }
+                    var $tooltip = $tryit.find(".tryit-canvas .tooltip");
+                    $tooltip.fadeIn(1000);
+                    setTimeout(function () {
+                        $tooltip.fadeOut(1000);
+                    }, 2000);
+                    tooltip = true;
+                });
+            },
+            functions: {
+                js: 'countingTiles',
+                python: 'checkio'
+            }
+        });
+        io.start();
     }
 );
