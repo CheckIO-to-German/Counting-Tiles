@@ -9,8 +9,7 @@
     Для примера: для круга радиусом 2 метра требуется 4 целых и 12 колотых блока.
 <p>
 <p style="text-align: center;">
-    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" width="500px"/>
-    <img class="for_editor_only" src="{{ MEDIA }}counting-tiles.png" width="380px"/>
+    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" style="max-height: 500px" />
 </p>
 
 <p><strong>Входные данные:</strong> Радиус круга, как число (int, float)</p>
@@ -18,12 +17,17 @@
 <p><strong>Выходные данные:</strong> Количество блоков, как список (list) двух чисел - [целые, колотые].</p>
 
 <div class="for_info_only"><strong>Примеры:</strong>
-<pre class="brush:python">
+<pre class="brush:python">{% if interpreter.slug == "js-node" %}
+countingTiles(2) == [4, 12]
+countingTiles(3) == [16, 20]
+countingTiles(2.1) == [4, 20]
+countingTiles(2.5) == [12, 20]
+{% else %}
 checkio(2) == [4, 12]
 checkio(3) == [16, 20]
 checkio(2.1) == [4, 20]
 checkio(2.5) == [12, 20]
-</pre>
+{% endif %}</pre>
 </div>
 
 
