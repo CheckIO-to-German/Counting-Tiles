@@ -1,0 +1,46 @@
+﻿<div style="text-align: center">
+    <img src="{{MEDIA}}title.png" style="max-height: 350px">
+</div>
+<p>
+    ステファンは彼らの新たな氷の基地に正方形の氷のタイルを使って円形の着陸地帯を作るのに助力を求めています。
+    彼は構築に着手する前に必要となるタイルの数を勘定したいと考えています。
+</p>
+<p>
+    各タイルは1辺が1メートルの正方形です。
+    あなたは半径がNメートルの円形地帯が必要とする完全な正方形のタイルと部分的なタイルの枚数を計算する必要があります。 
+    円の中央は4枚のタイルが成す交点とします。例：半径2メートルの円は4枚の完全なタイルと12枚の部分的なタイルが必要です。
+<p>
+<p style="text-align: center;">
+    <img class="for_info_only" src="{{ MEDIA }}counting-tiles.png" style="max-height: 500px" />
+</p>
+
+<p><strong>入力:</strong> 円の半径(float型)</p>
+
+<p><strong>出力:</strong> 完全なタイルと部分的なタイルの数の2つの整数からなるリスト([完全なタイル, 部分的なタイル])</p>
+
+<div class="for_info_only"><strong>Example:</strong>
+<pre class="brush:python">{% if interpreter.slug == "js-node" %}
+countingTiles(2) == [4, 12]
+countingTiles(3) == [16, 20]
+countingTiles(2.1) == [4, 20]
+countingTiles(2.5) == [12, 20]
+{% else %}
+checkio(2) == [4, 12]
+checkio(3) == [16, 20]
+checkio(2.1) == [4, 20]
+checkio(2.5) == [12, 20]
+{% endif %}</pre>
+</div>
+
+
+<p class="for_info_only">
+    <strong>どのように使われるか: </strong>
+    このタスクはシンプルな幾何学の問題です。しかしあなたはこれを建築や地形学に使うことができます。
+    プロジェクトに必要な材料の量を計算する際に用いることができるでしょう。
+</p>
+
+
+<p>
+    <strong>Precondition:</strong><br>
+    0 &lt; radius &le; 4<br>
+</p>
